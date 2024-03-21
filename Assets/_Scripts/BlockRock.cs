@@ -10,9 +10,9 @@ public class BlockRock : Block
         endurance = 5;
     }
 
-    public override void Bounce()
+    public override void Bounce(Collision collision)
     {
-        base.Bounce();
+        base.Bounce(collision);
     }
 
     public override void BlockDestruction()

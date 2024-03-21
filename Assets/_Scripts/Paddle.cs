@@ -17,6 +17,16 @@ public class Paddle : MonoBehaviour
         
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Ball")
+        {
+            Vector3 direccion = collision.contacts[0].point - transform.position;
+            direccion = direccion.normalized;
+            collision.rigidbody.velocity = collision.gameObject.GetComponent<Ball>().speed * direccion;
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {

@@ -10,9 +10,9 @@ public class BlockWood : Block
         endurance = 3;
     }
 
-    public override void Bounce()
+    public override void Bounce(Collision collision)
     {
-        base.Bounce();
+        base.Bounce(collision);
     }
 
     public override void BlockDestruction()
